@@ -94,7 +94,13 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ),
                           onPressed: () {},
-                          child: Text("Sign In"),
+                          child: Text(
+                            "Sign In",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                          ),
                         ),
                         SizedBox(height: height * 0.02),
                         Row(

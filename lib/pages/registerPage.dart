@@ -165,7 +165,13 @@ class _RegisterPageState extends State<RegisterPage> {
                             ),
                           ),
                           onPressed: signUp,
-                          child: Text("Sign Up"),
+                          child: Text(
+                            "Sign Up",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                          ),
                         ),
                         SizedBox(height: height * 0.02),
                         Row(
