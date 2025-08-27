@@ -18,9 +18,7 @@ class _LoginPageState extends State<LoginPage> {
       body: Stack(
         children: [
           ColoredBox(color: Colors.white),
-          // Positioned.fill(
-          //   child: Image.asset("images/bgimage.jpg", fit: BoxFit.fill),
-          // ),
+
           Positioned(
             top: 40,
             left: 10,
@@ -63,9 +61,9 @@ class _LoginPageState extends State<LoginPage> {
                         TextField(
                           decoration: InputDecoration(
                             labelText: "Enter Email",
-                            border: OutlineInputBorder(
+                            enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: const Color.fromARGB(255, 255, 0, 0),
+                                color: const Color.fromARGB(255, 255, 255, 255),
                               ),
                               borderRadius: BorderRadius.circular(20),
                             ),
@@ -77,7 +75,10 @@ class _LoginPageState extends State<LoginPage> {
                         TextField(
                           decoration: InputDecoration(
                             labelText: "Enter Pasword",
-                            border: OutlineInputBorder(
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: const Color.fromARGB(255, 255, 255, 255),
+                              ),
                               borderRadius: BorderRadius.circular(20),
                             ),
                             labelStyle: TextStyle(color: Colors.white),

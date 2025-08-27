@@ -100,9 +100,9 @@ class _RegisterPageState extends State<RegisterPage> {
                           controller: _nameController,
                           decoration: InputDecoration(
                             labelText: "Enter Name",
-                            border: OutlineInputBorder(
+                            enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: const Color.fromARGB(255, 255, 0, 0),
+                                color: const Color.fromARGB(255, 255, 255, 255),
                               ),
                               borderRadius: BorderRadius.circular(20),
                             ),
@@ -114,9 +114,9 @@ class _RegisterPageState extends State<RegisterPage> {
                           controller: _emailController,
                           decoration: InputDecoration(
                             labelText: "Enter Email",
-                            border: OutlineInputBorder(
+                            enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: const Color.fromARGB(255, 255, 0, 0),
+                                color: const Color.fromARGB(255, 255, 255, 255),
                               ),
                               borderRadius: BorderRadius.circular(20),
                             ),
@@ -130,7 +130,10 @@ class _RegisterPageState extends State<RegisterPage> {
                           controller: _passwordController,
                           decoration: InputDecoration(
                             labelText: "Enter Pasword",
-                            border: OutlineInputBorder(
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: const Color.fromARGB(255, 255, 255, 255),
+                              ),
                               borderRadius: BorderRadius.circular(20),
                             ),
                             labelStyle: TextStyle(color: Colors.white),
@@ -142,7 +145,10 @@ class _RegisterPageState extends State<RegisterPage> {
                           controller: _confirmPasswordController,
                           decoration: InputDecoration(
                             labelText: "Confirm Pasword",
-                            border: OutlineInputBorder(
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: const Color.fromARGB(255, 255, 255, 255),
+                              ),
                               borderRadius: BorderRadius.circular(20),
                             ),
                             labelStyle: TextStyle(color: Colors.white),
