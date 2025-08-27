@@ -45,15 +45,14 @@ class _LoginPageState extends State<LoginPage> {
                         ],
                       ),
                       borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(30),
-                        topRight: Radius.circular(30),
+                        topRight: Radius.circular(120),
                       ),
                     ),
                     child: Column(
                       children: <Widget>[
                         SizedBox(height: height * 0.04),
                         Text(
-                          "Welcome",
+                          "Welcome to Coursify",
                           style: TextStyle(color: Colors.white, fontSize: 30),
                         ),
                         SizedBox(height: height * 0.04),
