@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:signin_register/auth/auth_gate.dart';
 import 'package:signin_register/pages/loginPage.dart';
 import 'package:signin_register/pages/registerPage.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:supabase_flutter/supabase_flutter.dart' show Supabase;
 
 void main() async {
   await Supabase.initialize(
@@ -17,6 +18,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: LoginPage());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: AuthGate());
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:signin_register/pages/registerPage.dart';
+import '../auth/auth_service.dart';
+import 'profilePage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -9,6 +11,33 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final authService = AuthService();
+
+  void login() async {
+    final email = _emailController.text;
+    final password = _passwordController.text;
+    try {
+      await authService.signInWithEmailPassword(email, password);
+      if (mounted) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text("Login Successful")));
+      }
+      // Navigator.push(
+      //   context,
+      //   MaterialPageRoute(builder: (context) => ProfilePage()),
+      // );
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text("Login Failed: $e")));
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -58,6 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(height: height * 0.04),
 
                         TextField(
+                          controller: _emailController,
                           decoration: InputDecoration(
                             labelText: "Enter Email",
                             enabledBorder: OutlineInputBorder(
@@ -72,6 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(height: height * 0.02),
 
                         TextField(
+                          controller: _passwordController,
                           decoration: InputDecoration(
                             labelText: "Enter Pasword",
                             enabledBorder: OutlineInputBorder(
@@ -93,7 +124,7 @@ class _LoginPageState extends State<LoginPage> {
                               borderRadius: BorderRadius.circular(10),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: login,
                           child: Text(
                             "Sign In",
                             style: TextStyle(
